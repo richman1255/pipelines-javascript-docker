@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: richmanpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: richmanpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: richmanpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: richmanpipelinesjavascriptdocker 
+          image: mycontainerregistry1238.azurecr.io/richmanpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
